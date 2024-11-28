@@ -42,7 +42,7 @@ namespace Bibliotec.Controllers
                 Console.WriteLine("Ebah você entrou");
                 HttpContext.Session.SetString("UsuarioID", usuarioBuscado.UsuarioID.ToString());
                 HttpContext.Session.SetString("Admin", usuarioBuscado.Admin.ToString());
-                return LocalRedirect("~/");
+                return LocalRedirect("~/Usuario");
             }
         }
         // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

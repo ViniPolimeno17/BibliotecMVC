@@ -172,3 +172,4 @@ C:\Users\47766024829\Desktop\BibliotecaMVC\Bibliotec\obj\Debug\net8.0\scopedcss\
 C:\Users\47766024829\Desktop\BibliotecaMVC\Bibliotec\obj\Debug\net8.0\scopedcss\Views\Livro\Index.cshtml.rz.scp.css
 C:\Users\47766024829\Desktop\BibliotecaMVC\Bibliotec\obj\Debug\net8.0\scopedcss\Views\Login\Index.cshtml.rz.scp.css
 C:\Users\47766024829\Desktop\BibliotecaMVC\Bibliotec\obj\Debug\net8.0\scopedcss\Views\Usuario\Index.cshtml.rz.scp.css
+C:\Users\47766024829\Desktop\BibliotecaMVC\Bibliotec\obj\Debug\net8.0\Bibliotec.sourcelink.json

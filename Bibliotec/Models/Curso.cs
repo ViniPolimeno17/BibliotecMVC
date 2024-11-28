@@ -10,8 +10,6 @@ namespace Bibliotec.Models
         public string? Nome { get; set; }
         public char Periodo { get; set; }
 
-        [ForeignKey ("Usuario")]
-        public int UsuarioID { get; set; }
-        public Usuario? Usuario { get; set; }
+        
     }
 }

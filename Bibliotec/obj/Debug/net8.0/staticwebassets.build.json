@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NC6iyDFXy0c9IS31cFyDK3J/JEPmRflGR7HNEDpVbh8=",
+  "Hash": "1iuAzl8T6JcccrnIEYhRQJjl/+P7QFuCMk1WyY/vT/w=",
   "Source": "Bibliotec",
   "BasePath": "_content/Bibliotec",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\47766024829\\Desktop\\BibliotecaMVC\\Bibliotec\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Bibliotec.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\47766024829\\Desktop\\BibliotecaMVC\\Bibliotec\\wwwroot\\css\\menuLateral.css",
+      "SourceId": "Bibliotec",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\47766024829\\Desktop\\BibliotecaMVC\\Bibliotec\\wwwroot\\",
+      "BasePath": "_content/Bibliotec",
+      "RelativePath": "css/menuLateral.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\menuLateral.css"
     },
     {
       "Identity": "C:\\Users\\47766024829\\Desktop\\BibliotecaMVC\\Bibliotec\\wwwroot\\css\\site.css",

@@ -5,9 +5,9 @@
         <div class="pesquisa">
             <div class="box-input">
                 <input type="text">
-                <a href=""><img src="~/images/search-icon.svg" alt="icone de busca"></a>
+                <a href=""><img src="~/imagens/images/search-icon.svg" alt="icone de busca"></a>
             </div>
-            <a href=""><img class="botao-filtro" src="~/images/config-icon.png" alt="iconde de filtro"></a>
+            <a href=""><img class="botao-filtro" src="~/imagens/images/config-icon.png" alt="iconde de filtro"></a>
         </div>
 
         <table>
@@ -23,18 +23,20 @@
             </thead>
 
             <tbody>
-
+                @foreach(var livro in ViewBag.Livros){
+                    
                 <tr>
-                    <td data-cell="titulo">Nome</td>
-                    <td data-cell="reservado">Sim</td>
-                    <td data-cell="data devol.">Não possui reserva</td>
+                    <td data-cell="titulo">@livro.Nome</td>
+                    <td data-cell="reservado">@(ViewBag.LivrosComReserva.ContainsKey(livro.LivroID) ? "Sim" : "Não")</td>
+                    <td data-cell="data devol.">@(ViewBag.LivrosComReserva.ContainsKey(livro.LivroID) ? ViewBag.LivrosComReserva[livro.LivroID].ToString("dd/MM/yyyy") : "Nao possui reserva")</td>
                     <td class="icon" data-cell="editar"><a class="navbar-item"><img style="width: 40px;"
-                                src="~/images/editar.svg" alt=""></a></td>
+                                src="~/imagens/images/editar.svg" alt=""></a></td>
                     <td class="icon" data-cell="detalhes"><a class="navbar-item"><img style="width: 40px;"
-                                src="~/images/detalhes.svg" alt=""></a></td>
+                                src="~/imagens/images/detalhes.svg" alt=""></a></td>
                     <td class="icon" data-cell="excluir"><a class="navbar-item"><img style="width: 40px;"
-                                src="~/images/excluir.svg" alt=""></a></td>
+                                src="~/imagens/images/excluir.svg" alt=""></a></td>
                 </tr>
+                }
             </tbody>
         </table>
 

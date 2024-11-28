@@ -6,7 +6,7 @@ namespace Bibliotec.Models
     public class LivroReserva
     {
         [Key]
-        public int LivroCategoriaID { get; set; }
+        public int LivroReservaID { get; set; }
         public DateOnly DtReserva { get; set; }
         public DateOnly DtDevolucao { get; set; }
         public int Status { get; set; }

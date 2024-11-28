@@ -9,15 +9,88 @@
     <link rel="stylesheet" href="~/Bibliotec.styles.css" asp-append-version="true" />
 
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/menuLateral.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Bibliotec.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 <body>
+    @if(ViewBag.Admin == "False"){
+        //Menu de aluno
+         <div class="container-flex">
+            <div class="sombra"></div>
+            <aside class="">
+                <span onclick="recolheMenu(event);" class="mnu-arrow-left">&lt;</span>
+                <div class="aside-top">
+                    <img class="logo-mobile" src="~/imagens/images/logo-mobile.png" alt="" />
+
+                    <nav class="menu-lateral">
+                        <a href="#" class="nav-item-active">
+                            <img src="~/imagens/images/UserPlus-icon.svg" alt="" />
+                            Perfil
+                        </a>
+
+                        <a href="#">
+                            <img src="~/imagens/images/Book-icon.png" alt="" />
+                            Livros Disponíveis
+                        </a>
+                        <a href="#">
+                            <img src="~/imagens/images/BookHeart-Icon.png" alt="" />
+                            Favoritos
+                        </a>
+                    </nav>
+                </div>
+
+                <a class="user-logout" asp-area="" asp-controller="Login" asp-action="Logout">
+                    <img src="~/imagens/images/logout-icon.svg" alt="" />
+                    Sair
+                </a>
+            </aside>
+
+            @RenderBody()
+        </div>
+    }else if(ViewBag.Admin == "Admin") {
+        //Menu de admin
+        <div class="container-flex">
+            <div class="sombra"></div>
+            <aside class="">
+                <span onclick="recolheMenu(event);" class="mnu-arrow-left">&lt;</span>
+                <div class="aside-top">
+                    <img class="logo-mobile" src="~/imagens/images/logo-mobile.png" alt="" />
+
+                    <nav class="menu-lateral">
+                        <a class="nav-item-active" asp-area="" asp-controller="Usuario" asp-action="Index" >
+                            <img src="~/imagens/images/UserPlus-icon.svg" alt="Icone de usuário com um símbolo de adição"/>
+                            Perfil
+                        </a>
+                        <a asp-area="" asp-controller="Livro" asp-action="Cadastro">
+                            <img src="~/imagens/images/CadLivro-icon.png" alt="Icone de livro com um símbolo de adição" />
+                            Cadastrar Livro
+                        </a>
+                        <a asp-area="" asp-controller="Livro" asp-action="Index">
+                            <img src="~/imagens/images/ListLivro-icon.png" alt="ícone com três livros" />
+                            Listar Livros
+                        </a>
+
+                    </nav>
+                </div>
+
+                <a class="user-logout" asp-area="" asp-controller="Login" asp-action="Logout">
+                    <img src="~/imagens/images/logout-icon.svg" alt="" />
+                    Sair
+                </a>
+            </aside>
+
+            @RenderBody()
+        </div>
+
+    }else{
+
      <header class="header">
         <div class="container header-flex">
             <img src="~/imagens/images/logo-recortado.png" alt=""
                 class="logotipo. Imagem de um libro aberto e um texto escrito Bibliotech" />
+    using Microsoft.EntityFrameworkCore.Metadata.Internal;
             <nav class="navbar" id="navbar">
                 <img class="arrow-left" src="~/imagens/images/arrow-left.svg" alt="Menu Mobile" onclick="mostraMenu()" />
                 <img class="logo-mobile" src="~/imagens/images/logo-mobile.png" alt="Menu Mobile" />
@@ -70,6 +143,7 @@
             </p>
         </div>
     </footer>
+    }
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

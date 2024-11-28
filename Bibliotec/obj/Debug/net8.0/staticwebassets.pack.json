@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Bibliotec.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\47766024829\\Desktop\\BibliotecaMVC\\Bibliotec\\wwwroot\\css\\menuLateral.css",
+      "PackagePath": "staticwebassets\\css\\menuLateral.css"
+    },
+    {
       "Id": "C:\\Users\\47766024829\\Desktop\\BibliotecaMVC\\Bibliotec\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
