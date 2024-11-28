@@ -1,0 +1,239 @@
+form[b-gnpogp9kcd] {
+    width: 90%;
+  }
+  
+  /* .form-linha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px 0;
+  } */
+  
+  .form-linha[b-gnpogp9kcd] {
+    display: flex;
+    gap: 20px;
+    padding: 15px 0;
+    
+  }
+  
+  .form-upload[b-gnpogp9kcd] {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+  }
+  
+  .form-input-upload[b-gnpogp9kcd] {
+    height: 40px;
+    background: #FFF;
+    color: #000;
+    border-radius: 10px;
+    border: none;
+    padding: 5px 15px;
+    display: flex;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  
+  .form-input-checkbox[b-gnpogp9kcd] {
+    border-radius: 10px;
+    accent-color: #2fd6cb;
+  }
+  
+  
+  /* --------------------------------------------------- */
+  
+  /* Estilo do container do checkbox */
+  .checkbox-container[b-gnpogp9kcd] {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Esconder o checkbox padrão */
+  .checkbox-container input[type="checkbox"][b-gnpogp9kcd] {
+    display: none;
+  }
+  
+  /* Estilo do checkbox customizado */
+  .custom-checkbox[b-gnpogp9kcd] {
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Estilo do ícone quando o checkbox está ativo */
+  .checkbox-container input[type="checkbox"]:checked+.custom-checkbox[b-gnpogp9kcd] {
+    background-color: #2fd6cb;
+    /* Cor verde para indicar "ativo" */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Ícone de verificação */
+  .custom-checkbox[b-gnpogp9kcd]::before {
+    content: '✓';
+    color: white;
+    font-size: 18px;
+    display: none;
+  }
+  
+  /* Mostrar o ícone de verificação apenas quando o checkbox está ativo */
+  .checkbox-container input[type="checkbox"]:checked+.custom-checkbox[b-gnpogp9kcd]::before {
+    display: block;
+  }
+  
+  /* --------------------------------------------------- */
+
+  .form-group-name[b-gnpogp9kcd]{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group[b-gnpogp9kcd] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .form-label[b-gnpogp9kcd] {
+    font-weight: 500;
+    /* font-family: "Courier New", Courier, monospace; */
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  ul[b-gnpogp9kcd]{
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    /* height: 100%; */
+    list-style-type: none;
+  }
+
+  li[b-gnpogp9kcd]{
+    list-style-type: none;
+    width: 270px;
+  }
+
+  .form-label-categoria[b-gnpogp9kcd]{
+    font-weight:normal;
+    /* font-family: "Courier New", Courier, monospace; */
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+  }
+  
+  label[b-gnpogp9kcd] {
+    font-weight: bold;
+    /* font-family: "Courier New", Courier, monospace; */
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+  }
+  
+  .form-input[b-gnpogp9kcd] {
+    height: 40px;
+    background: #FFF;
+    color: #000;
+    border-radius: 10px;
+    border: none;
+    padding: 0 15px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    font-family: "Montserrat", sans-serif;
+  
+    font-size: 15px;
+  }
+  
+  .form-descricao[b-gnpogp9kcd] {
+    height: 200px;
+    padding: 15px 15px;
+  }
+  
+  .input-foto[b-gnpogp9kcd] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background: #FFF;
+    color: var(--dark-blue);
+    border-radius: 10px;
+    border: none;
+    padding: 0 15px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  
+    width: 100%;
+  
+  }
+  
+  
+  .input-foto i[b-gnpogp9kcd] {
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  
+  #foto[b-gnpogp9kcd] {
+    display: none;
+    /* display: none;
+    width: 30px;
+    height: 30px; */
+  }
+  
+  .form-checkbox input[b-gnpogp9kcd] {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  
+  #ativo[b-gnpogp9kcd] {
+    width: 30px;
+    height: 30px;
+  }
+  
+  #categoria[b-gnpogp9kcd] {
+    cursor: pointer;
+  }
+  
+  .btn-div[b-gnpogp9kcd] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-cadastrar[b-gnpogp9kcd] {
+    width: 50%;
+    height: 50px;
+    background: #FFF;
+    color: black;
+    font-weight: 600;
+    /* text-transform: uppercase; */
+    border: 2px solid #2fd6cb;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .btn-cadastrar:hover[b-gnpogp9kcd] {
+    background: #2fd6cb;
+    color: #FFF;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .form-linha[b-gnpogp9kcd] {
+      flex-wrap: wrap;
+    }
+
+    .form-upload[b-gnpogp9kcd]{
+      width: 100%;
+    }
+    
+  }
