@@ -63,6 +63,12 @@ namespace Bibliotec.Controllers
             context.Livro.Add(novoLivro);
             context.SaveChanges();
 
+            List<LivroCategoria> livroCategorias = new List<LivroCategoria>();
+
+            string[] categoriasSelecionadas = form ["Categori"].ToString().Split(',');
+
+            return LocalRedirect ("Cadastro");
+
         }
         // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         // public IActionResult Error()
