@@ -28,7 +28,7 @@ namespace Bibliotec.Controllers
 
             List<Livro> listaLivros = context.Livro.ToList();
 
-            var livrosReservados = context.LivroReserva.ToDictionary(livro => livro.LivroID, livror => livror.DtReserva);
+            var livrosReservados = context.livroReserva.ToDictionary(livro => livro.LivroID, livror => livror.DtReserva);
 
             ViewBag.Livros = listaLivros;
             ViewBag.LivrosComReserva = livrosReservados;
@@ -38,6 +38,12 @@ namespace Bibliotec.Controllers
             return View();
         }
 
+        [Route("Cadastro")]
+        //Metodo que aparece a tela de cadastro:
+        public IActionResult Cadastro(){
+
+            return View();
+        }
         // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         // public IActionResult Error()
         // {
