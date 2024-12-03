@@ -40,9 +40,29 @@ namespace Bibliotec.Controllers
 
         [Route("Cadastro")]
         //Metodo que aparece a tela de cadastro:
-        public IActionResult Cadastro(){
+        public IActionResult Cadastro(){   
 
+            ViewBag.Admin = HttpContext.Session.GetString("Admin")!;
+
+            ViewBag.Categorias = context.Categoria.ToList();
+            //Retorna a View de Cadastro
             return View();
+        }
+
+        [Route("Cadastrar")]
+        public IActionResult Cadastrar(IFormCollection form){
+
+            Livro novoLivro = new Livro();
+
+            novoLivro.Nome = form["Nome"].ToString();
+            novoLivro.Descricao = form["Descricao"].ToString();
+            novoLivro.Editora = form["Editora"].ToString();
+            novoLivro.Escritor = form["Escritor"].ToString();
+            novoLivro.Idioma = form["Idioma"].ToString();
+
+            context.Livro.Add(novoLivro);
+            context.SaveChanges();
+
         }
         // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         // public IActionResult Error()

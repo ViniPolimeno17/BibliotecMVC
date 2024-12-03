@@ -26,12 +26,12 @@
                     <td data-cell="titulo">@livro.Nome</td>
                     <td data-cell="reservado">
                         @*Dentro da tabela Livros Reserva Contém a chave livroID???*@
-                        @(ViewBag.LivrosComReserva.ContainsKey(livro.LivroId) 
+                        @(ViewBag.LivrosComReserva.ContainsKey(livro.LivroID) 
                         ? "Sim" 
                         :"Não")</td>
                     <td data-cell="data devol.">
                          @*Dentro da tabela Livros Reserva Contém a chave livroID???*@
-                        @(ViewBag.LivrosComReserva.ContainsKey(livro.LivroId) 
+                        @(ViewBag.LivrosComReserva.ContainsKey(livro.LivroID) 
                         ? ViewBag.LivrosComReserva[livro.LivroID].ToString("dd/MM/yyyy") 
                         :"Nao possui reserva")
                     </td>
