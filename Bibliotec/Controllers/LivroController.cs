@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using Bibliotec.Contexts;
 using Bibliotec.Models;
@@ -129,7 +130,7 @@ namespace Bibliotec.Controllers
             livroAtualizado.Escritor = form["Escritor"];
             livroAtualizado.Idioma = form["Idioma"];
 
-            if(imagem.Length > 0){
+            if(imagem != null && imagem.Length > 0){
                 var caminhoImagem = Path.Combine("wwwroot/images/Livros", imagem.FileName);
 
                 if (!string.IsNullOrEmpty(livroAtualizado.Imagem)){
@@ -148,16 +149,61 @@ namespace Bibliotec.Controllers
 
                     livroAtualizado.Imagem = imagem.FileName;
 
+               }
+
+                //Categorias:
+                //PRIMEIRO: precisamos pegar as categorias selecionadas do usuario
+                var categoriasSelecionadas = form["Categoria"].ToString();
+                //SEGUNDO: Pegaremos as categorias Atuais do livro
+                var categoriasAtuais = context.LivroCategoria.Where(livro => livro.LivroID == id).ToList();
+                //TERCEIRO: Renovaremos as categorias antigas
+                foreach (var categoria in categoriasAtuais){
+                    if (!categoriasSelecionadas.Contains(categoria.CategoriaID.ToString())){
+                        context.LivroCategoria.Remove(categoria);
+                    }
                 }
+                //QUARTO: adicionaremos as novas categorias 
+                foreach(var categoria in categoriasSelecionadas){
+
+                    if (!categoriasAtuais.Any(c => c.CategoriaID.ToString() == categoria))
+                    {
+
+                        context.LivroCategoria.Add(new LivroCategoria
+                        {
+                            LivroID = id,
+                            CategoriaID = int.Parse(categoria)
+                        });
+                    }
+                }
+
+                context.SaveChanges();
+
+                return LocalRedirect("/Livro");
+
             }
 
 
 
 
+        [Route("Excluir/{id}")]
+        public ActionResult Excluir(int id){
+
+            Livro livroEncontrado = context.Livro.First(livro => livro.LivroID == id);
+
+            var categoriasDoLivro = context.LivroCategoria.Where(livro => livro.LivroID == id).ToList();
+
+            foreach (var categoria in categoriasDoLivro){
+                context.LivroCategoria.Remove(categoria);
+            }
+
+            context.Livro.Remove(livroEncontrado);
+            return LocalRedirect("/Livro");
         }
+    }
+
    
         
-    }
+}
 
 
 
