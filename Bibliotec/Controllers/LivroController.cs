@@ -65,7 +65,7 @@ namespace Bibliotec.Controllers
 
                 var pasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/Livros");
 
-                if(Directory.Exists(pasta)){
+                if(!Directory.Exists(pasta)){
                     Directory.CreateDirectory(pasta);
 
                 }
@@ -78,8 +78,7 @@ namespace Bibliotec.Controllers
 
                 novoLivro.Imagem = arquivo.FileName;
 
-                }else
-                {
+                } else{
                     novoLivro.Imagem = "padrao.png";
                 }
             
@@ -89,7 +88,7 @@ namespace Bibliotec.Controllers
 
             List<LivroCategoria> listaLivroCategorias = new List<LivroCategoria>();
 
-            string[] categoriasSelecionadas = form ["Categori"].ToString().Split(',');
+            string[] categoriasSelecionadas = form ["Categoria"].ToString().Split(',');
 
             foreach(string categoria in categoriasSelecionadas){
                 LivroCategoria livroCategoria = new LivroCategoria();
@@ -101,8 +100,26 @@ namespace Bibliotec.Controllers
 
             context.SaveChanges();
 
-            return LocalRedirect ("/Cadastro");
+            return LocalRedirect ("/Livro/Cadastro");
             }
+
+        [Route("Editar/{id}")]
+        public IActionResult Editar(int id){
+            ViewBag.Admin = HttpContext.Session.GetString("Admin")!;
+
+            ViewBag.CategoriasDoSistema = context.Categoria.ToList(); 
+
+            Livro livroEcontrado = context.Livro.FirstOrDefault(livro => livro.LivroID == id)!;
+
+            var categoriasDoLivroEncontrado = context.LivroCategoria.Where(identificadorLivro => identificadorLivro.LivroID == id).Select(livro => livro.Categoria).ToList();
+
+            ViewBag.Livro = livroEcontrado;
+            ViewBag.Categoria = categoriasDoLivroEncontrado;
+
+            return View();
+        }
+
+
 
 
         }
