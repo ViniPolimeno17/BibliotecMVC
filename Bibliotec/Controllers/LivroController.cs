@@ -119,13 +119,51 @@ namespace Bibliotec.Controllers
             return View();
         }
 
+        [Route("Atualizar/{id}")]
+        public IActionResult Atualizar(IFormCollection form, int id, IFormFile imagem){
+            Livro livroAtualizado = context.Livro.FirstOrDefault(livro => livro.LivroID == id)!;
+
+            livroAtualizado.Nome = form["Nome"];
+            livroAtualizado.Descricao = form["Descricao"];
+            livroAtualizado.Editora = form["Editora"];
+            livroAtualizado.Escritor = form["Escritor"];
+            livroAtualizado.Idioma = form["Idioma"];
+
+            if(imagem.Length > 0){
+                var caminhoImagem = Path.Combine("wwwroot/images/Livros", imagem.FileName);
+
+                if (!string.IsNullOrEmpty(livroAtualizado.Imagem)){
+                    
+                    var caminhoImagemAntiga = Path.Combine("wwwroot/images/Livros", livroAtualizado.Imagem);
+
+                    if(System.IO.File.Exists(caminhoImagemAntiga)){
+                        System.IO.File.Delete(caminhoImagemAntiga);
+                    }
+
+                    }
+
+                    using (var stream = new FileStream(caminhoImagem, FileMode.Create)){
+                        imagem.CopyTo(stream);
+                    }
+
+                    livroAtualizado.Imagem = imagem.FileName;
+
+                }
+            }
+
 
 
 
         }
+   
+        
+    }
+
+
+
         // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         // public IActionResult Error()
         // {
         //     return View("Error!");
         // }
-}
+
